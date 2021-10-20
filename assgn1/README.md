@@ -16,14 +16,14 @@ Download the Wookie IDE from the Canvas page ("Software" Module). Copy the follo
 * This program will add data1 and data3 and subtract data2 
 *
 *
-*                                Table to be filled out
-*     Step    |    PC         |   Register A |   Memory $B003 |   NZVC    |
-*     ----------------------------------------------------------------------------
-*       1       |                  |                     |                              |                  |
-*       2       |                  |                     |                              |                  |
-*       3       |                  |                     |                              |                  |
-*       4       |                  |                     |                              |                  |
-*
+                                Table to be filled out
+     Step    |    PC         |   Register A |   Memory $B003 |   NZVC    |
+     ----------------------------------------------------------------------------
+       1       |                  |                     |                              |                  |
+       2       |                  |                     |                              |                  |
+       3       |                  |                     |                              |                  |
+       4       |                  |                     |                              |                  |
+
 ********************************************
 * data location starts at $B000
 		ORG		$B000
