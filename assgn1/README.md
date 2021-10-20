@@ -11,7 +11,8 @@ Download the Wookie IDE from the Canvas page ("Software" Module). Copy the follo
 
 
                                 Table to be filled out
-       Step    |    PC         |   Register A |   Memory $B003 |   NZVC    |
+       Step    |       PC         |      Register A     |         Memory $B003         |       NZVC       |
+       ----------------------------------------------------------------------------------------------------
        1       |                  |                     |                              |                  |
        2       |                  |                     |                              |                  |
        3       |                  |                     |                              |                  |
