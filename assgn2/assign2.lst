@@ -1,0 +1,58 @@
+0001                         **************************************
+0002                         *
+0003                         * Name: Gian Zignago
+0004                         * ID:   12567832
+0005                         * Date: 9/29/2021
+0006                         * Lab2
+0007                         *
+0008                         * Program description:
+0009                         *
+0010                         * multiply two 1-byte numbers, NUM1 and NUM2, 
+0011                         * by adding NUM1 to itself NUM2 times.
+0012                         *
+0013                         * Pseudocode:
+0014                         *
+0015                         * int NUM1=255;
+0016                         * int NUM2=255;
+0017                         *
+0018                         * unsigned int result;
+0019                         * unsigned int count;
+0020                         *   
+0021                         *    count=0;
+0022                         *    result=0;
+0023                         *    while(count<NUM2){
+0024                         *    result+=NUM1;
+0025                         *    count++;
+0026                         *    }
+0027                         *
+0028                         **************************************
+0029                         
+0030 b000                    	ORG $B000
+0031 b000 ff                 NUM1	FCB	255		
+0032 b001 ff                 NUM2	FCB	255
+0033                         
+0034 b010                    	ORG $B010
+0035 b010                    RESULT	RMB	2	product of NUM1*NUM2 stored in RESULT at program termination
+0036 b012                    COUNT		RMB	1	counter cannot be greater than NUM1 or NUM2, so it is 1 byte.
+0037                         
+0038 c000                    	ORG $C000
+0039 c000 7f b0 12           	CLR 	COUNT		set counter to $00
+0040 c003 7f b0 10           	CLR	RESULT	set first byte of RESULT to $00
+0041 c006 7f b0 11           	CLR	RESULT+1	set second byte of RESULT to $00
+0042 c009 b6 b0 12           WHILE LDAA	COUNT		start of while loop
+0043 c00c b1 b0 01           	CMPA	NUM2		compare counter value with NUM2
+0044 c00f 24 0f              	BHS	ENDWHLE	if counter >= NUM2, break loop
+0045 c011 4f                 	CLRA			clear counter from A to make space for casting 
+0046 c012 f6 b0 00           	LDAB	NUM1		cast NUM1 as 2-byte variable
+0047 c015 f3 b0 10           	ADDD	RESULT	fills D register with RESULT
+0048 c018 fd b0 10           	STD	RESULT	add NUM1 to RESULT
+0049 c01b 7c b0 12           	INC 	COUNT		increment the loop counter
+0050 c01e 20 e9              	BRA 	WHILE		return to while condition at loop body end
+0051 c020 cf                 ENDWHLE	STOP		terminate program at loop end
+
+COUNT      b012
+ENDWHLE    c020
+NUM1       b000
+NUM2       b001
+RESULT     b010
+WHILE      c009
