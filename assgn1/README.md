@@ -1,6 +1,6 @@
-CS3280/ECE3280
-LAB Assignment #1			
-Due date: Friday, September 17, before 2:00 pm (no late submission accepted)
+# CS3280/ECE3280
+## LAB Assignment #1			
+### Due date: Friday, September 17, before 2:00 pm (no late submission accepted)
 
 Download the Wookie IDE from the Canvas page ("Software" Module). Copy the following assembly language programming example into a text file named ASSGN1.ASM (make sure to maintain the exact layout, including the initial tab before each instruction).
 
